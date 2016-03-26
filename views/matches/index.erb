@@ -1,0 +1,18 @@
+<div id="content">
+
+<% @matches.each do |match| %>
+
+<p>match:</p>
+<p><a href="/matches/<%= match.id %>">
+    <%= match.winner_points %>
+    v
+    <%= match.looser_points %>
+</a>
+  </p>
+<a href="/matches/<%= match.id %>/edit ">Edit match</a>
+  <hr>
+<% end %>
+
+</div>
+
+<a class="bottom-link" href="/matches/new">Add New matches</a>

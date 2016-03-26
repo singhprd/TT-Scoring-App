@@ -1,0 +1,16 @@
+* {
+  border: 1px solid black;
+}
+
+#navbar {
+  list-style: none;
+}
+
+#navbar ul li {
+  display: inline;
+}
+
+#content {
+  background-color: wheat;
+  margin: 20px;
+}
