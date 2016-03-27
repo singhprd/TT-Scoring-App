@@ -13,19 +13,19 @@ class Player
   def save
     sql = "INSERT INTO Players (name) VALUES ('#{@name}');"
     SqlRunner.run( sql )
+    return last_entry()
+  end
+
+  def self.update( params )
+    sql = "UPDATE Players SET name='#{params['name']}' WHERE id = #{params['id']}"
+    SqlRunner.run( sql )
     # return last_entry()
   end
 
-  # def update()
-  #   sql = "UPDATE Players SET name='#{@name}' WHERE id = #{@id}"
-  #   SqlRunner.run( sql )
-  #   return last_entry()
-  # end
-
-  # def last_entry
-  #   sql = "SELECT * FROM Players ORDER BY id DESC limit 1;"
-  #   return Player.map_item(sql)
-  # end
+  def last_entry
+    sql = "SELECT * FROM Players ORDER BY id DESC limit 1;"
+    return Player.map_item(sql)
+  end
 
 
   def self.find( id )
@@ -39,20 +39,20 @@ class Player
     return Player.map_items(sql)
   end
 
-  # def self.destroy( id )
-  #   sql = "DELETE FROM Players WHERE id = '#{id}'"
-  #   SqlRunner.run(sql)
-  # end
+  def self.destroy( id )
+    sql = "DELETE FROM Players WHERE id = '#{id}'"
+    SqlRunner.run(sql)
+  end
 
-  # def self.delete_all 
-  #   sql = "DELETE FROM Players"
-  #   SqlRunner.run(sql)
-  # end
+  def self.delete_all 
+    sql = "DELETE FROM Players"
+    SqlRunner.run(sql)
+  end
 
 
   def self.map_item(sql)
     result = Player.map_items(sql)
-    return result.first
+    return result[0]
   end  
 
   def self.map_items(sql)
@@ -62,3 +62,7 @@ class Player
   end
   
 end
+
+# player1 = Player.new({ 'name' => 'Bruce' })
+# player1 = player1.save
+# puts player1.last_entry

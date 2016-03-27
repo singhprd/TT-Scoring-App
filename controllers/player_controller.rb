@@ -18,3 +18,20 @@ get '/players/:id' do
   @player = Player.find( id )
   erb :'players/show'
 end
+
+get '/players/:id/edit' do
+  id = params[:id]
+  @player = Player.find(id)
+  erb :'players/edit'
+end
+
+post '/players/:id' do
+  Player.update(params)
+  redirect '/players'
+end 
+
+post '/players/:id/delete' do
+  Player.destroy( params[:id] )
+  redirect '/players'
+end
+

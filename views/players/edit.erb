@@ -1,0 +1,12 @@
+<div id="content">
+
+  <h1>Edit player:</h1>
+  <form action="/players/<%= @player.id %>" method="post">
+    <input type="text" name="name" value="<%= @player.name %>"> </input>
+
+  <input type='submit' value="Submit">
+
+  </form>
+
+</div>
+

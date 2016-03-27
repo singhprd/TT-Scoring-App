@@ -7,5 +7,7 @@ require_relative ('models/player');
 require_relative ('models/match');
 
 get '/' do
+  @players = Player.all
+  @matches = Match.all
   erb :'/homepage'
 end

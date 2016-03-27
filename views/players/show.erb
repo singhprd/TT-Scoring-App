@@ -3,5 +3,19 @@
   <h1>Player:</h1>
   <p>Name: </p>
   <%= @player.name %>
+  <p>
+    ID:
+    <%= @player.id %>
+  </p>
 
+  <p>
+    <a href="/players/<%= @player.id %>/edit ">Edit player</a>
+  </p>
+
+  <form action="/players/<%= @player.id %>/delete" method="post">
+    <input type="submit" value="Delete Player"/>
+  </form>    
+
+
+</div>
 

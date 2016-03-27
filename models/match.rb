@@ -43,15 +43,15 @@ class Match
     return Match.map_items(sql)
   end
 
-  # def self.destroy( id )
-  #   sql = "DELETE FROM Matches WHERE id = '#{id}'"
-  #   SqlRunner.run(sql)
-  # end
+  def self.destroy( id )
+    sql = "DELETE FROM Matches WHERE id = '#{id}'"
+    SqlRunner.run(sql)
+  end
 
-  # def self.delete_all 
-  #   sql = "DELETE FROM Matches"
-  #   SqlRunner.run(sql)
-  # end
+  def self.delete_all 
+    sql = "DELETE FROM Matches"
+    SqlRunner.run(sql)
+  end
 
 
   def self.map_item(sql)

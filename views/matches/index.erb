@@ -3,14 +3,19 @@
 <% @matches.each do |match| %>
 
 <p>match:</p>
+
+<%= Player.find(match.player_winner).name %>
+v
+<%= Player.find(match.player_looser).name %>
+
 <p><a href="/matches/<%= match.id %>">
     <%= match.winner_points %>
     v
     <%= match.looser_points %>
 </a>
   </p>
-<a href="/matches/<%= match.id %>/edit ">Edit match</a>
   <hr>
+  
 <% end %>
 
 </div>

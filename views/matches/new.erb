@@ -4,32 +4,33 @@
 
   <form action="/matches" method="post">
 
-  <label for="player_winner">Winner:</label>
-  <select name = 'player_winner'>
-    <% @players.each do |each| %>
-    <option value="<%= each.id %>">
-      <%= each.name %>
-    </option>
-    <% end %>
-  </select>
+    <label for="player_winner">Winner:</label>
+    <select name = 'player_winner'>
+      <% @players.each do |each| %>
+      <option value="<%= each.id %>">
+        <%= each.name %>
+      </option>
+      <% end %>
+    </select>
 
-  <input type="number" name="winner_points">Points</input>
+    <input type="number" name="winner_points">Points</input>
 
-  <hr>
+    <hr>
 
-  <label for="player_looser">Looser:</label>
-  <select name = 'player_looser'>
-    <% @players.each do |each| %>
-    <option value="<%= each.id %>">
-      <%= each.name %>
-    </option>
-    <% end %>
-  </select>
+    <label for="player_looser">Looser:</label>
+    <select name = 'player_looser'>
+      <% @players.each do |each| %>
+      <option value="<%= each.id %>">
+        <%= each.name %>
+      </option>
+      <% end %>
+    </select>
 
     <input type="number" name="looser_points">Points</input>
 
-
-  <input type='submit' value="Submit">
+    <p>
+      <input type='submit' value="Submit">
+    </p>
 
   </form>
 

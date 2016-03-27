@@ -22,3 +22,15 @@ get '/matches/:id' do
   erb :'matches/show'
 end
 
+get '/matches/:id/edit' do
+  id = params[:id]
+  @match = Match.find(id)
+  @players = Player.all  
+  erb :'matches/edit'
+end
+
+post '/matches/:id/delete' do
+  Match.destroy( params[:id] )
+  redirect '/matches'
+end
+

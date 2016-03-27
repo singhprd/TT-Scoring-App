@@ -1,5 +1,8 @@
+@import url(https://fonts.googleapis.com/css?family=Aldrich);
+
 * {
-  border: 1px solid black;
+  /*border: 1px solid black;*/
+  font-family: 'Aldrich', sans-serif;
 }
 
 #navbar {

@@ -1,13 +1,21 @@
 <div id="content">
 
-  <h1>Winner:</h1>
-  <p>Name: </p>
-  <%= @match.player_winner %>
-  <%= @match.winner_points %>
 
-  <%= @player_winner.name %>
-  <%= @player_looser.name %>
-  <%= @match.player_looser %>
-  <%= @match.looser_points %>
+  <p> 
+    <%= @match.winner_points %>
+    <%= @player_winner.name %>
+  </p>
 
+  <p>
+    <%= @match.looser_points %>
+    <%= @player_looser.name %>
+  </p>
+
+  <a href="/matches/<%= @match.id %>/edit ">Edit match</a>
+
+  <form action="/matches/<%= @match.id %>/delete" method="post">
+    <input type="submit" value="Delete Match"/>
+  </form>   
+
+</div>
 
